@@ -1,0 +1,34 @@
+import requests
+import json
+import csv
+
+url = "https://www.sjvair.com/api/1.0/monitors/"
+county_list = ['Stockton' ,'Manteca' , 'Modesto' , 'Delano', 'Bakersfield', 'Empire', 'Waterford', 'Ceres' ,'Turlock' ,'Grayson' ,'Patterson' ,'Merced' ,'Fairmead' ,'Madera', 'Clovis', 'Hanford' ,'Corcoran' ,'Visalia' ,'Terra' ,'Bella']
+loop_county_list = [i for i in county_list]
+r = requests.get(url , params = {"is_sjvair": "true" , "county":json.dumps(loop_county_list), "device":"PurpleAir"})
+with open("data.json" , "w") as i:
+    i.write(json.dumps(r.json() , indent = 4))
+
+with open("data.json", "r") as read_file:
+    data = json.load(read_file)
+
+sensor_list = ["Clovis RAMP PA" , "Fresno CARB CCAC" , "Fresno CARB CCAC" , "CCAC_Office" , "ucm-88d4" , "Madison Out" , "Fresno-Pacific RAMP PA" , "Fresno-Foundry RAMP PA"
+        , "ucm-8b6f" , "Hanford RAMP PA" , "Corcoran-Patterson RAMP PA" , "The Birds" , "Ms.Roosevelt" , "ucm-1c8a" , "Terra Bella Elementary School" , "Ducor Union Elementary School",
+        "Albany Park School" , "Terrace Elementary School" , "Morningside Elementary School" , "Almond Tree Middle School" , "Fremont Elementary School" , "CCAC BAM - Delano" , "DELANO_Coloc",
+        "Harvest and La Vina School" , "Pioneer School" ," Nueva Vista Language Academy" , "Del Vista Math and Science Academy" ," Princeton Street School" , "Bakersfield Golden RAMP PA" , 
+        "Bakersfield CARB CCAC"
+        ]
+
+new_list = []
+print(len(data["data"]))
+for index in range(0  ,len(data['data'])):
+    if data['data'][index]['name'] in sensor_list:
+        new_list.append({
+            'name': data['data'][index]['name'],
+            'id': data['data'][index]['purple_id'],
+            'lat': data['data'][index]['position']['coordinates'][1],
+            'log': data['data'][index]['position']['coordinates'][0],
+        })
+with open("new_data.json" , "w") as i:
+    i.write(json.dumps(new_list , indent = 4))
+

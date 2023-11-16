@@ -1,0 +1,90 @@
+[
+    {
+        "data": {
+            "id": "yiz5lVBeRf26NdX-KtrPlg",
+            "name": "Oak Creek-Blackwood",
+            "device": "PurpleAir",
+            "is_active": true,
+            "is_sjvair": false,
+            "position": {
+                "type": "Point",
+                "coordinates": [
+                    -119.70533,
+                    37.264816
+                ]
+            },
+            "sensors": [
+                "a",
+                "b"
+            ],
+            "last_active_limit": 3600,
+            "location": "outside",
+            "latest": {
+                "timestamp": "2023-11-16T03:01:41.817Z",
+                "sensor": "a",
+                "celsius": "13.3",
+                "fahrenheit": "56.0",
+                "humidity": "65.0",
+                "pressure": "935.58",
+                "pm10": "1.83",
+                "pm25": "6.27",
+                "pm100": "3.05",
+                "pm25_reported": "2.78",
+                "pm25_avg_15": "5.91",
+                "pm25_avg_60": "6.41",
+                "particles_03um": "475.00",
+                "particles_05um": "133.00",
+                "particles_100um": "0.00",
+                "particles_10um": "18.00",
+                "particles_25um": "2.00",
+                "particles_50um": "0.00"
+            },
+            "county": "Madera",
+            "purple_id": 173617
+        }
+    },
+    {
+        "data": {
+            "id": "4r4YUB_5T8qW6-p6wOpGqQ",
+            "name": "Timberview",
+            "device": "PurpleAir",
+            "is_active": true,
+            "is_sjvair": false,
+            "position": {
+                "type": "Point",
+                "coordinates": [
+                    -119.584854,
+                    37.270893
+                ]
+            },
+            "sensors": [
+                "a",
+                "b"
+            ],
+            "last_active_limit": 3600,
+            "location": "outside",
+            "latest": {
+                "timestamp": "2023-11-16T03:01:35.398Z",
+                "sensor": "a",
+                "celsius": "11.7",
+                "fahrenheit": "53.0",
+                "humidity": "64.0",
+                "pressure": "888.08",
+                "pm10": "0.39",
+                "pm25": "2.60",
+                "pm100": "3.20",
+                "pm25_reported": "2.68",
+                "pm25_avg_15": "2.46",
+                "pm25_avg_60": "2.49",
+                "particles_03um": "411.00",
+                "particles_05um": "116.00",
+                "particles_100um": "0.00",
+                "particles_10um": "27.00",
+                "particles_25um": "6.00",
+                "particles_50um": "0.00"
+            },
+            "county": "Madera",
+            "purple_id": 93921
+        }
+    }
+]
